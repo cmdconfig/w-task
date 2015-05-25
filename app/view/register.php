@@ -1,3 +1,3 @@
 <div id="body-wrapper">
-<?=__('register.name','ru')?>
+<?=__('register.name',\Core\Session::get('lang'))?>
 </div>

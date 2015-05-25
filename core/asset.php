@@ -24,7 +24,7 @@ class Asset {
 
         }
 
-        return join("\r\n",$result);
+        return join("\r\n",$result)."\r\n";
     }
 
     /**
@@ -38,6 +38,6 @@ class Asset {
                 $result[] = '<link type="text/css" rel="stylesheet" href="http://' . $_SERVER["SERVER_NAME"] . '/assets/css/' . $val . '" />';
             }
         }
-        return join("\r\n",$result);
+        return join("\r\n",$result)."\r\n";
     }
 }

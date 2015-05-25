@@ -8,7 +8,7 @@
 //phpinfo(INFO_VARIABLES);die();
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
-
+session_start();
 define('APPPATH', realpath('app/').'/');
 define('COREPATH', realpath('core').'/');
 define('ASSETPATH', realpath('assets').'/');
@@ -16,11 +16,17 @@ define('ASSETPATH', realpath('assets').'/');
 //var_dump($_SERVER["REQUEST_URI"]);
 
 include_once COREPATH."config.php";
+include_once COREPATH."session.php";
+
 include_once COREPATH."base.php";
 include_once COREPATH."lang.php";
 include_once COREPATH.'autoloader.php';
 include_once COREPATH.'asset.php';
 include_once COREPATH.'view.php';
+
+if(\Core\Session::get('lang')){
+    \Core\Session::set('lang','ru');
+}
 
 $Autoloader = new \Core\Autoloader();
 
