@@ -11,7 +11,6 @@ namespace Core;
 
 class Lang {
 
-
     /**
      * @param $string
      * @param $setLang
@@ -21,9 +20,11 @@ class Lang {
         $langArr = [];
         $lang = explode('.',$string);
 
+
         $file = APPPATH.'lang/'.$setLang.'/'.$lang[0].'.php';
         if(file_exists($file)){
-            include_once $file;
+            include $file;
+
             return $langArr[$lang[1]];
         }
     }

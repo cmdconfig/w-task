@@ -7,5 +7,9 @@
  */
 
 $langArr = [
-    'name'=>'имя'
+    'name'=>'Имя',
+    'surname'=>'Фамилия',
+    'email'=>'email',
+    'phone'=>'Телефон',
+    'address'=>'Аддрес',
 ];
