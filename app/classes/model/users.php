@@ -27,7 +27,7 @@ class Users extends DB {
 
         $this->dbs = $dbs[$server];
         $this->tables =$tables[$server];
-        var_dump($this->tables);
+
     }
 
     /**
@@ -100,7 +100,7 @@ class Users extends DB {
     public function getUserByLoginPass($email,$pass){
         $pass = md5($pass);
         $table = $this->dbs['w_task'].'.'.$this->tables['w_task']['users'];
-        $select = $this->db->prepare("SELECT * FROM {$table} WHERE(email=:$email AND pass=:pass)");
+        $select = $this->db->prepare("SELECT * FROM {$table} WHERE(email=:email AND pass=:pass)");
         $select->bindParam(':email',$email,\PDO::PARAM_STR);
         $select->bindParam(':pass',$pass,\PDO::PARAM_STR);
         $select->setFetchMode(\PDO::FETCH_ASSOC);

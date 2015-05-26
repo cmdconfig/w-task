@@ -4,8 +4,8 @@
 $(function(){
     var $enterButton = $("#enter");
     $enterButton.button();
-    $finish_reg.button();
     $enterButton.click(function(){
-        var $form = $("#enter_form").serializeArray();
+        //var $form = $("#enter_form").serializeArray();
+
     });
 });

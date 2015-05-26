@@ -11,7 +11,7 @@
                     <td><input type="text" name="u_pass" id="u_pass"></td>
                 </tr>
             </table>
-            <input type="button" id="enter" value="<?=__('index.enter',\Core\Session::get('lang'))?>">
+            <input type="submit" id="enter" value="<?=__('index.enter',\Core\Session::get('lang'))?>">
         </form>
     </div>
 </div>
