@@ -9,9 +9,18 @@
 class NamespaceAutoloader
 {
 
-    // карта для соответствия неймспейса пути в файловой системе
+    /**
+     * карта для соответствия неймспейса пути в файловой системе
+     * @var array
+     */
     protected $namespacesMap = array();
 
+    /**
+     * Метод подгрузки Namespac
+     * @param $namespace
+     * @param $rootDir
+     * @return bool
+     */
     public function addNamespace($namespace, $rootDir)
     {
         if (is_dir($rootDir)) {
@@ -22,11 +31,19 @@ class NamespaceAutoloader
         return false;
     }
 
+    /**
+     * Метод регистрации автолодера
+     */
     public function register()
     {
         spl_autoload_register(array($this, 'autoload'));
     }
 
+    /**
+     * Метод регистрации класса
+     * @param $class
+     * @return bool
+     */
     protected function autoload($class)
     {
 

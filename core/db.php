@@ -23,6 +23,10 @@ class DB {
      */
     public $tables;
 
+    /**
+     * Конструктор подключения к БД
+     * @param $server
+     */
     function __construct($server){
         $dbConfig = [];
         include_once APPPATH.'config/db.php';

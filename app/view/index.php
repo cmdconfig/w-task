@@ -14,4 +14,5 @@
             <input type="submit" id="enter" value="<?=__('index.enter',\Core\Session::get('lang'))?>">
         </form>
     </div>
+    <a href="/register"><?=__('index.register',\Core\Session::get('lang'))?></a>
 </div>

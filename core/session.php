@@ -11,6 +11,7 @@ namespace Core;
 
 class Session {
     /**
+     * Метод устанавливает сессию с ключом
      * @param string $name
      * @param mixed $data
      */
@@ -19,6 +20,7 @@ class Session {
     }
 
     /**
+     * Метод возвращает значение сесси по ключу
      * @param string $name
      * @return mixed
      */

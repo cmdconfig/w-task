@@ -37,6 +37,7 @@ class Config {
     }
 
     /**
+     * Метод установки конфига
      * @param $string
      * @param $value
      */

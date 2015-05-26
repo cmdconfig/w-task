@@ -7,7 +7,7 @@
  */
 
 /**
- * A wrapper function for Lang::get()
+ * Функция для вывода языков
  *
  * @param	mixed	The string to translate
  * @param	array	The parameters

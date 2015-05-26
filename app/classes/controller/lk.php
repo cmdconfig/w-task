@@ -9,9 +9,11 @@
 class Controller_Lk {
 
     function __construct(){
-
     }
 
+    /**
+     * Метод входа пользователя по логину(email) и паролю
+     */
     public function post_enter(){
         $result = [];
         if(isset($_POST['u_email']) && isset($_POST['u_pass'])){
@@ -20,16 +22,15 @@ class Controller_Lk {
             if(!empty($result)){
                 \Core\Session::set('uData',$result);
                 header('Location: /lk');
-
-
             } else {
                 header('Location: /');
             }
         }
-
-
     }
 
+    /**
+     * Метод вывода страницы личного кабинета
+     */
     public function action_index(){
         $uData = \Core\Session::get('uData');
 
@@ -42,11 +43,9 @@ class Controller_Lk {
 
     }
 
-    public function action_register(){
-        $result = \Core\View::forge('lk',['asd'=>'lk register1s']);
-        return $result;
-    }
-
+    /**
+     * Метод выхода пользователя из личного кабинета
+     */
     public function post_exit(){
         session_destroy();
         $uData = \Core\Session::get('uData');

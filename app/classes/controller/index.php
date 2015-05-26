@@ -9,15 +9,12 @@
 class Controller_Index {
 
     function __construct(){
-
     }
 
-    
+    /**
+     * Метод отвечает за вывод первой сраницы
+     */
     public function action_index(){
         $result = \Core\View::forge('index',['asd'=>'index main']);
-    }
-
-    public function post_register(){
-
     }
 }

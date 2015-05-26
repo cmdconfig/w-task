@@ -12,6 +12,7 @@ namespace Core;
 class Lang {
 
     /**
+     * Метод подгрузки языковых файлов
      * @param $string
      * @param $setLang
      * @return mixed

@@ -11,6 +11,7 @@ namespace Core;
 
 class Asset {
     /**
+     * Метод подгрузки файлов js
      * @param array $files
      * @return string
      */
@@ -28,6 +29,7 @@ class Asset {
     }
 
     /**
+     * Метод подгрузки файлов css
      * @param $files
      * @return string
      */

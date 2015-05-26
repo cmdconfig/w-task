@@ -10,9 +10,16 @@ namespace Core;
 
 
 class View {
+    /**
+     * @var array
+     */
     protected $data = [];
+    /**
+     * @var
+     */
     public $html;
     /**
+     * Метод устанавливает какую вью подгружать
      * @param null $options
      * @return View
      */
@@ -20,6 +27,11 @@ class View {
         return new static($file, $data);
     }
 
+    /**
+     * Конструктор подгружающий основные файлы шаблона
+     * @param null $file
+     * @param null $data
+     */
     function __construct($file = null, $data = null){
 
         if (is_object($data) === true){
