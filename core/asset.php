@@ -34,6 +34,7 @@ class Asset {
     public static function css($files){
         $result = [];
         foreach($files as $val){
+
             if(file_exists(ASSETPATH.'css/'.$val)) {
                 $result[] = '<link type="text/css" rel="stylesheet" href="http://' . $_SERVER["SERVER_NAME"] . '/assets/css/' . $val . '" />';
             }

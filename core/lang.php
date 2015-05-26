@@ -20,11 +20,10 @@ class Lang {
         $langArr = [];
         $lang = explode('.',$string);
 
-
         $file = APPPATH.'lang/'.$setLang.'/'.$lang[0].'.php';
+
         if(file_exists($file)){
             include $file;
-
             return $langArr[$lang[1]];
         }
     }

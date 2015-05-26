@@ -3,12 +3,13 @@
  */
 body {
     background: url('/assets/img/background.png') top left repeat;
+
 }
 #body-wrapper {
     background-color: white;
-    height: 600px;
-    width: 800px;
-    margin-left: 20%;
+    height: 590px;
+    width: 600px;
+    margin-left: 25%;
     margin-top: 20px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -17,5 +18,109 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
     padding: 30px;
 
+}
+#ui-datepicker-div,#u_sex_radioset{
+    font: 82.5% "Trebuchet MS", sans-serif;
+    margin: 5px 0 0 20px;
+}
 
+.u_reg_input{
+    width: 260px;
+    margin: 5px 0 0 20px;
+    padding: 5px;
+}
+
+#u_address{
+    height: 100px;
+}
+
+#checkPassTrue{
+    color: green;
+    display: none;
+}
+
+#checkPassFalse{
+    color: red;
+    display: none;
+}
+
+#checkPassTrue,#checkPassFalse{
+    font-size: 11px;
+}
+
+#finish_reg{
+    margin: 0 0 0 35%;
+}
+
+#reg_title{
+    font-size: 30px;
+    margin: 0 0 10px 20%;
+}
+#siimage{
+    margin: 5px 0 0 20px;
+}
+
+#cap_refresh{
+    width: 20px;
+    margin-top: 35px;
+}
+#captcha_sound{
+    width: 15px;
+    margin-top: 20px
+}
+
+#uploadFile{
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    width: 471px;
+    display: none;
+    font-size: 1.5em;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 10px;
+}
+
+.JSFileChoos, .startJSuploadButton {
+    display: inline-block;
+    cursor: pointer;
+    line-height: 1;
+    padding: 7px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    background-color: #39c;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+.JSUploadForm{
+    font-size: 60%;
+}
+
+#load_ava{
+    font-size: 70%;
+    margin: 10px 0 0 20px;
+}
+
+#u_ava{
+    width: 80px;
+    position: absolute;
+    margin: -30px 0 0 170px;
+}
+
+.empty_field{
+    font-size: 60%;
+    color: red;
+    position: absolute;
+    margin: 14px 0 0 5px;
+}
+
+.empty_input{
+    border-color: red;
 }

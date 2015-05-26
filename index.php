@@ -12,6 +12,9 @@ session_start();
 define('APPPATH', realpath('app/').'/');
 define('COREPATH', realpath('core').'/');
 define('ASSETPATH', realpath('assets').'/');
+define('DATAPATH', realpath('data').'/');
+define('AVAPATH', realpath('data/ava').'/');
+define('VENDORSPATH', realpath('app/vendors').'/');
 
 //var_dump($_SERVER["REQUEST_URI"]);
 
@@ -24,7 +27,7 @@ include_once COREPATH.'autoloader.php';
 include_once COREPATH.'asset.php';
 include_once COREPATH.'view.php';
 
-if(\Core\Session::get('lang')){
+if(!\Core\Session::get('lang')){
     \Core\Session::set('lang','ru');
 }
 
