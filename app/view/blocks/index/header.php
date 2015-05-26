@@ -9,7 +9,7 @@
         'JQuery.JSAjaxFileUploader.js',
         'jQuery-Mask/jquery.mask.js',
 
-        'lk.js'
+        'index.js'
     ]);
     ?>
     <?
@@ -19,7 +19,7 @@
     }
     ?>
     <?=\Core\Asset::css([
-        'lk.css',
+        'index.css',
         'jquery-ui.css'
     ]);?>
 </head>

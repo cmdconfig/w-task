@@ -9,7 +9,7 @@
  
  
 
-
+namespace Helpers;
 
 
 class Helpers_Main {
@@ -207,6 +207,19 @@ class Helpers_Main {
                 .substr($charid,20,12);
             return $uuid;
         }
+    }
+
+    /**
+     * @param $form
+     * @return array
+     */
+    public static function prepareArr($form){
+        $result = [];
+        foreach($form as $val){
+            $result[$val['name']] = $val['value'];
+        }
+
+        return $result;
     }
 
 

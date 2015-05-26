@@ -1,7 +1,5 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: asm
- * Date: 5/25/15
- * Time: 8:47 PM
- */
+<div id="body-wrapper">
+    <div id="ava-vrapper">
+        <img src="<?=$data['ava']?>">
+    </div>
+</div>

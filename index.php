@@ -26,21 +26,6 @@ include_once COREPATH."lang.php";
 include_once COREPATH.'autoloader.php';
 include_once COREPATH.'asset.php';
 include_once COREPATH.'view.php';
-
-if(!\Core\Session::get('lang')){
-    \Core\Session::set('lang','ru');
-}
-
-$Autoloader = new \Core\Autoloader();
-
-$Controller = $Autoloader::load_classes($_SERVER["REQUEST_URI"]);
-
-if(!empty($_POST)){
-    $method = 'post_'.\Core\Autoloader::$method;
-    $Controller->$method();
-} else {
-    $method = 'action_'.\Core\Autoloader::$method;
-
-    $Controller->$method();
-}
+require_once COREPATH.'namespace_autoloader.php';
+require APPPATH.'bootstrap.php';
 

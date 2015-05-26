@@ -1,0 +1,19 @@
+body {
+    background: url('/assets/img/background.png') top left repeat;
+
+}
+
+#body-wrapper {
+    background-color: white;
+    height: 590px;
+    width: 900px;
+    margin-left: 15%;
+    margin-top: 20px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 30px;
+
+}

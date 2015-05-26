@@ -6,10 +6,10 @@
  * Time: 11:51 PM
  */
 
+use Model\Users;
 class Controller_Register {
 
     function __construct(){
-//        $_SESSION['test']='Hello world!';
     }
 
     public function action_index(){
@@ -18,12 +18,13 @@ class Controller_Register {
 
     }
 
-    public function post_go(){
-
-//        var_dump($_POST['form']);
+    public function post_go(){;
         if(!empty($_POST['form'])){
-
-            \Model\Users::forge('mainServer')->addUser($_POST['form']);
+            $result = \Model\Users::forge('mainServer')->addUser($_POST['form']);
+            if($result){
+                \Core\Session::set('uData',$_POST['form']);
+                return true;
+            }
         }
     }
 
@@ -52,9 +53,8 @@ class Controller_Register {
 
     public function post_check_email(){
         $result = false;
-        if(!empty($_POST['u_email'])){
-            $result = \Model\Users::forge('mainServer')->checkUser($_POST['u_email']);
-
+        if(!empty($_POST['email'])){
+            $result = Users::forge('mainServer')->checkUser($_POST['email']);
         }
 
         echo $result;

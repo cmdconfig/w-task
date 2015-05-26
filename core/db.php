@@ -10,9 +10,17 @@ namespace Core;
 
 
 class DB {
-
+    /**
+     * @var \PDO
+     */
     public $db;
+    /**
+     * @var array
+     */
     public $dbs;
+    /**
+     * @var array
+     */
     public $tables;
 
     function __construct($server){

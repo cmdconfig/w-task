@@ -14,7 +14,7 @@ class Controller_Index {
 
     
     public function action_index(){
-        var_dump('index action_index');
+        $result = \Core\View::forge('index',['asd'=>'index main']);
     }
 
     public function post_register(){

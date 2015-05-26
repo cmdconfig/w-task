@@ -62,11 +62,16 @@ $(function(){
         var $form = $("#register_form").serializeArray();
 
         $.post('/register/go',{'form':$form},function(response){
-            console.log(response);
+            if(response){
+                window.location.replace("/lk");
+            }
         })
     }
 
     function checkCaptcha(value){
+        if($("#pass") != $("#pass_conf")){
+            return false;
+        }
         $.post('/register/check_captcha',{'ct_captcha':value,dataType  : 'json'},function(response){
             if(response){
                 goReg();
