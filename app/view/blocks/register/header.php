@@ -9,7 +9,8 @@
     'JQuery.JSAjaxFileUploader.js',
     'jQuery-Mask/jquery.mask.js',
 
-    'register.js'
+    'register.js',
+    'main.js'
 ]);
 ?>
 <?

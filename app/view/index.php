@@ -14,5 +14,10 @@
             <input type="submit" id="enter" value="<?=__('index.enter',\Core\Session::get('lang'))?>">
         </form>
     </div>
+    <br />
     <a href="/register"><?=__('index.register',\Core\Session::get('lang'))?></a>
+    <div id="downloadSrc-wrapper">
+        <a href="/data/w-task.zip"><?=__('index.download_src',\Core\Session::get('lang'))?></a>
+    </div>
 </div>
+

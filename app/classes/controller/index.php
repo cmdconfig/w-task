@@ -17,4 +17,11 @@ class Controller_Index {
     public function action_index(){
         $result = \Core\View::forge('index',['asd'=>'index main']);
     }
+
+    public function post_lang(){
+        if(isset($_POST['lang'])){
+            \Core\Session::set('lang',$_POST['lang']);
+            echo true;
+        }
+    }
 }

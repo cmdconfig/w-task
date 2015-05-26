@@ -1,5 +1,12 @@
 <div id="body-wrapper">
-    <div id="reg_title">Регистрация нового пользователя</div>
+    <div id="lang">
+        <?if(\Core\Session::get('lang') == 'ru'):?>
+            <img src="/assets/img/en.png" id="lang-img" lang="en">
+        <?else:?>
+            <img src="/assets/img/ru.png" id="lang-img" lang="ru">
+        <?endif;?>
+    </div>
+    <div id="reg_title"><?=__('register.title',\Core\Session::get('lang'))?></div>
     <form name="register" action="" method="post" id="register_form" enctype="multipart/form-data">
         <table>
             <tr>

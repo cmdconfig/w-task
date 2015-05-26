@@ -7,5 +7,25 @@
  */
 
 $langArr = [
-    'name'=>'name'
+    'name'=>'name',
+    'surname'=>'surname',
+    'email'=>'email',
+    'phone'=>'phone',
+    'address'=>'address',
+    'birth'=>'Date of Birthя',
+    'sex'=>'sex',
+    'sex_m'=>'male',
+    'sex_w'=>'female',
+    'pass'=>'password',
+    'pass_conf'=>'Confirm password',
+    'checkPassTrue'=>'passwords match',
+    'checkPassFalse'=>'Passwords do not match',
+    'finish_reg'=>'Sign up',
+    'captcha'=>'security code',
+    'empty_field'=>'Required field',
+    'valid_email'=>'Invalid formatт',
+    'email_exists'=>'This email is already registered',
+    'exit_button'=>'exit',
+    'title'=>'New User Registration'
+
 ];
