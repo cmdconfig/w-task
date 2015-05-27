@@ -55,7 +55,7 @@
             <tr>
                 <td>Фотография</td>
                 <td>
-                    <input type="button" id="load_ava" value="Загрузить фото">
+                    <input type="button" id="load_ava" value="<?=__('register.uploadPhoto',\Core\Session::get('lang'))?>">
                     <span><img src="" id="u_ava"></span>
                     <input type="hidden" id="u_ava_file_name" name="u_ava_file_name">
                 </td>

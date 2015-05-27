@@ -27,6 +27,9 @@ $langArr = [
     'email_exists'=>'This email is already registered',
     'exit_button'=>'exit',
     'title'=>'New User Registration',
-    'captcha_err'=>'Invalid code'
+    'captcha_err'=>'Invalid code',
+    'getFile'=>'Select Files ...',
+    'uploadFile'=>'upload file',
+    'uploadPhoto'=>'Upload a photo'
 
 ];

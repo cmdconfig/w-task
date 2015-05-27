@@ -23,11 +23,11 @@ THE SOFTWARE.*/
  var defaults = {
 	uploadUrl:null,	//URL to which file must be uploaded Ex: upload.php
 	fileName:'file', //File name of the upload file 
-    inputText:'Выберите файлы...', //Text on file select button
+    inputText:getFile,//'Выберите файлы...', //Text on file select button
     formData:{},		//Any extra data to be sent with each uploaded file
     autoSubmit:true,	//If set to true then uploads starts as soon as a file is selected
-    uploadTest:'Загрузить',	//Text to be displayed on upload button
-	allowExt: 'gif|jpg|jpeg|png|bmp|mp4|mp3|pdf|doc|docx|xsl|txt|xls',	//File extension to be allowed for upload you can specify n number file types
+    uploadTest:uploadFile,	//Text to be displayed on upload button
+	allowExt: 'gif|jpg|jpeg|png',	//File extension to be allowed for upload you can specify n number file types
 	maxFileSize: 5242880,	//Restrict each file size, default 5 MB in Bytes
 	beforesend:function(file){}, //function to be executed before each upload for more info please refer https://api.jquery.com/jQuery.ajax/
 	always:function(file){}, //function to be executed always each upload for more info please refer https://api.jquery.com/jQuery.ajax/
