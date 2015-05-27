@@ -9,14 +9,13 @@
 $autoloader = new NamespaceAutoloader();
 $autoloader->addNamespace('Model', APPPATH.'classes/model');
 $autoloader->addNamespace('Core', COREPATH);
-$autoloader->addNamespace('helpers', APPPATH.'classes/helpers');
+$autoloader->addNamespace('Helpers', APPPATH.'classes/helpers');
 $autoloader->register();
 
 if(!\Core\Session::get('lang')){
     \Core\Session::set('lang','ru');
 }
-;
-//$Autoloader = new \Core\Autoloader();
+
 $Autoloader = \Core\Autoloader::init();
 
 $Controller = $Autoloader::load_classes($_SERVER["REQUEST_URI"]);

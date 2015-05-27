@@ -6,13 +6,14 @@ $(function(){
     var $finish_reg = $("#finish_reg");
     var $load_ava = $("#load_ava");
     var $u_email = $("#u_email");
-    $("#u_birth").datepicker();
+    var $u_birth = $("#u_birth");
+    $u_birth.datepicker();
     $("#u_sex_radioset").buttonset();
     $finish_reg.button();
     $load_ava.button();
     $('#u_phone').mask('(000) 000-00-00');
 
-    $("#u_pass_conf").keyup(function(e){
+    $("#u_pass_conf").keyup(function(){
         var pass = $("#u_pass").val();
         var pass_conf = $(this).val();
         if(pass == pass_conf){
@@ -26,7 +27,6 @@ $(function(){
 
     $finish_reg.click(function(){
         var $form = $("#register_form").serializeArray();
-        //console.log($form);
         if(checkFields($form)){
             var captchaVal = $("#ct_captcha").val();
             checkCaptcha(captchaVal);
@@ -43,7 +43,7 @@ $(function(){
         zoomPreview:true,
         zoomWidth:260,
         zoomHeight:260,
-        complete:function(file,xhr){
+        complete:function(){
             $("#uploadFile").hide();
         },
         success:function(response){
@@ -62,19 +62,36 @@ $(function(){
         var $form = $("#register_form").serializeArray();
 
         $.post('/register/go',{'form':$form},function(response){
-            if(response){
+            if(response == 'ok'){
                 window.location.replace("/lk");
+            } else {
+                $.each(response,function(i,val){
+                    addInputError(val,emptyField);
+                    if(val == 'u_email_v'){
+                        addInputError({'name':'u_email'},valid_email);
+                    }
+                    if(val == 'u_email_e'){
+                        addInputError({'name':'u_email'},valid_email);
+                    }
+
+                })
             }
         })
     }
 
     function checkCaptcha(value){
-        if($("#pass") != $("#pass_conf")){
+        if($("#pass").val() != $("#pass_conf").val()){
             return false;
         }
         $.post('/register/check_captcha',{'ct_captcha':value,dataType  : 'json'},function(response){
+            $("#err_ct_captcha").remove();
+            $("#empty_input").removeClass('empty_input');
+
             if(response){
                 goReg();
+            } else {
+                $("#cap_refresh").click();
+                addInputError({'name':'ct_captcha'},captcha_err);
             }
         })
     }
@@ -113,12 +130,21 @@ $(function(){
         }
     });
 
+    $u_birth.change(function(){
+
+        $(this).removeClass('empty_input');
+        $("#err_u_birth").remove();
+
+    });
+
     function checkEmailExists(email){
         $.post('/register/check_email',{'email':email},function(response){
-            console.log(response);
             if(response){
                 addInputError({'name':'u_email'},email_exists);
                 form_error = true;
+            } else {
+                $("#err_u_email").remove();
+                $("#u_email").removeClass('empty_input');
             }
         })
     }

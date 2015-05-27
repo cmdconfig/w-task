@@ -26,7 +26,8 @@ if(empty($lang) || $lang == 'ru'){
     <script>
         var emptyField = '<?=__('register.empty_field',\Core\Session::get('lang'))?>';
         var valid_email = '<?=__('register.valid_email',\Core\Session::get('lang'))?>';
-        var email_exists = '<?=__('register.valid_email',\Core\Session::get('lang'))?>';
+        var email_exists = '<?=__('register.email_exists',\Core\Session::get('lang'))?>';
+        var captcha_err = '<?=__('register.captcha_err',\Core\Session::get('lang'))?>';
     </script>
 </head>
 <body>

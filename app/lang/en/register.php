@@ -26,6 +26,7 @@ $langArr = [
     'valid_email'=>'Invalid formatт',
     'email_exists'=>'This email is already registered',
     'exit_button'=>'exit',
-    'title'=>'New User Registration'
+    'title'=>'New User Registration',
+    'captcha_err'=>'Invalid code'
 
 ];

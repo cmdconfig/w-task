@@ -9,7 +9,8 @@
         'JQuery.JSAjaxFileUploader.js',
         'jQuery-Mask/jquery.mask.js',
 
-        'index.js'
+        'index.js',
+        'main.js'
     ]);
     ?>
     <?

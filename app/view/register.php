@@ -23,18 +23,18 @@
             </tr>
             <tr>
                 <td><label for="u_pass"><?=__('register.pass',\Core\Session::get('lang'))?></label></td>
-                <td><input type="text" class="u_reg_input" name="u_pass" id="u_pass">
+                <td><input type="password" class="u_reg_input" name="u_pass" id="u_pass">
                 </td>
             </tr>
             <tr>
                 <td><label for="u_pass_conf"><?=__('register.pass_conf',\Core\Session::get('lang'))?></label></td>
-                <td><input type="text" class="u_reg_input" name="u_pass_conf" id="u_pass_conf">
+                <td><input type="password" class="u_reg_input" name="u_pass_conf" id="u_pass_conf">
                     <span id="checkPassTrue"><?=__('register.checkPassTrue',\Core\Session::get('lang'))?></span>
                     <span id="checkPassFalse"><?=__('register.checkPassFalse',\Core\Session::get('lang'))?></span>
                 </td>
             </tr>
             <tr>
-                <td><label for="u_name"><?=__('register.phone',\Core\Session::get('lang'))?></label></td>
+                <td><label for="u_phone"><?=__('register.phone',\Core\Session::get('lang'))?></label></td>
                 <td><input type="text" class="u_reg_input" name="u_phone" id="u_phone"></td>
             </tr>
             <tr>
@@ -82,8 +82,8 @@
                 <td><input type="text" name="u_email" id="u_email"></td>
             </tr>
             <tr>
-                <td><label for="u_pass"><?=__('index.pass',\Core\Session::get('lang'))?></label></td>
-                <td><input type="text" name="u_pass" id="u_pass"></td>
+                <td><label for="u_pass_login"><?=__('index.pass',\Core\Session::get('lang'))?></label></td>
+                <td><input type="password" name="u_pass" id="u_pass_login"></td>
             </tr>
         </table>
         <input type="submit" id="enter" value="<?=__('index.enter',\Core\Session::get('lang'))?>">

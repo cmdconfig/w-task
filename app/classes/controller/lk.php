@@ -14,8 +14,7 @@ class Controller_Lk {
     /**
      * Метод входа пользователя по логину(email) и паролю
      */
-    public function post_enter(){
-        $result = [];
+    public function post_enter(){;
         if(isset($_POST['u_email']) && isset($_POST['u_pass'])){
             $result = \Model\Users::forge('mainServer')->getUserByLoginPass($_POST['u_email'],$_POST['u_pass']);
 
@@ -33,11 +32,10 @@ class Controller_Lk {
      */
     public function action_index(){
         $uData = \Core\Session::get('uData');
-
         if(empty($uData)){
             header('Location: /');
         } else {
-            $result = \Core\View::forge('lk',$uData);
+            \Core\View::forge('lk',$uData);
 
         }
 

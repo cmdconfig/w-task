@@ -1,4 +1,11 @@
 <div id="body-wrapper">
+    <div id="lang">
+        <?if(\Core\Session::get('lang') == 'ru'):?>
+            <img src="/assets/img/en.png" id="lang-img" lang="en">
+        <?else:?>
+            <img src="/assets/img/ru.png" id="lang-img" lang="ru">
+        <?endif;?>
+    </div>
     <div id="login-wrapper">
         <form method="post" action="/lk/enter" id="enter_form">
             <table>
@@ -8,7 +15,7 @@
                 </tr>
                 <tr>
                     <td><label for="u_pass"><?=__('index.pass',\Core\Session::get('lang'))?></label></td>
-                    <td><input type="text" name="u_pass" id="u_pass"></td>
+                    <td><input type="password" name="u_pass" id="u_pass"></td>
                 </tr>
             </table>
             <input type="submit" id="enter" value="<?=__('index.enter',\Core\Session::get('lang'))?>">

@@ -1,9 +1,16 @@
 <div id="body-wrapper">
+    <div id="lang">
+        <?if(\Core\Session::get('lang') == 'ru'):?>
+            <img src="/assets/img/en.png" id="lang-img" lang="en">
+        <?else:?>
+            <img src="/assets/img/ru.png" id="lang-img" lang="ru">
+        <?endif;?>
+    </div>
     <div id="ava-wrapper">
-        <img src="/data/ava/<?=$data['ava_file_name']?>" id="ava">
+        <img src="/data/ava/<?=empty($data['ava_file_name']) ? 'emptyreview.png' : $data['ava_file_name']?>" id="ava">
     </div>
     <div id="name-wrapper">
-        <?=$data['surname']?> <?=$data['u_name']?>
+        <?=$data['surname']?> <?=isset($data['u_name']) ? $data['u_name'] : $data['name']?>
     </div>
     <div id="info-wrapper">
 

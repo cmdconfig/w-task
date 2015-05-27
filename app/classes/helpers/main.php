@@ -12,7 +12,7 @@
 namespace Helpers;
 
 
-class Helpers_Main {
+class Main {
     /**
      * @param $form
      * @return array
@@ -26,6 +26,14 @@ class Helpers_Main {
         return $result;
     }
 
+    public static function removeU($form){
+        $result = [];
+        foreach($form as $key=>$val){
+            $tmpKey = str_replace("u_",'',$key);
+            $result[$tmpKey] = $val;
 
+        }
+        return $result;
+    }
 
 } 

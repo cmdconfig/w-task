@@ -29,12 +29,23 @@ class Controller_Register {
         if(!empty($_POST['form'])){
             $chForm = $this->checkForm($_POST['form']);
             if(!empty($chForm)){
-                echo json_decode($chForm);
+                echo json_encode($chForm);
                 return false;
             }
-            $result = \Model\Users::forge('mainServer')->addUser($_POST['form']);
+            $Users = \Model\Users::forge('mainServer');
+            $form = Helpers\Main::prepareArr($_POST['form']);
+            $chEmailExists = $Users->checkUser($form['u_email']);
+            if(isset($chEmailExists['id'])){
+                return ['u_email_v'];
+
+            }
+            $result = $Users->addUser($_POST['form']);
+
             if($result){
-                \Core\Session::set('uData',$_POST['form']);
+                $form = Helpers\Main::removeU($form);
+
+                \Core\Session::set('uData',$form);
+                echo 'ok';
                 return true;
             }
         }
@@ -78,7 +89,10 @@ class Controller_Register {
             $result = Users::forge('mainServer')->checkUser($_POST['email']);
         }
 
-        echo $result;
+
+        if(isset($result['id'])){
+            echo true;
+        }
     }
 
     /**
@@ -88,7 +102,9 @@ class Controller_Register {
      */
     private function checkForm($form){
         $error = [];
-        $form = \Helpers\Helpers_Main::prepareArr($form);
+
+
+        $form = Helpers\Main::prepareArr($form);
         foreach($this->checkFields as $key){
             if(empty($form[$key])){
                 $error[] = $key;
@@ -97,7 +113,7 @@ class Controller_Register {
 
         if (!filter_var($form['u_email'], FILTER_VALIDATE_EMAIL)) {
             if(!array_search('u_email',$form)){
-                $error[] = 'u_email_f' ;
+                $error[] = 'u_email_v' ;
             }
         }
 

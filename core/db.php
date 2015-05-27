@@ -32,6 +32,7 @@ class DB {
         include_once APPPATH.'config/db.php';
         try {
             $this->db = new \PDO($dbConfig[$server]['dsn'], $dbConfig[$server]['user'], $dbConfig[$server]['password']);
+            $this->db->exec("set names utf8");
         } catch (\PDOException $e) {
             die('Подключение не удалось: ' . $e->getMessage());
         }

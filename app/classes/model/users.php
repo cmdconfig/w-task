@@ -10,7 +10,7 @@ namespace Model;
 
 
 use Core\DB;
-use Helpers\Helpers_Main;
+use Helpers\Main;
 
 class Users extends DB {
 
@@ -37,7 +37,7 @@ class Users extends DB {
      */
     public function checkUser($email){
         $table = $this->dbs['w_task'].'.'.$this->tables['w_task']['users'];
-        $select = $this->db->prepare("SELECT id FROM {$table} WHERE email=:email");
+        $select = $this->db->prepare("SELECT 'id' FROM {$table} WHERE email=:email");
         $select->bindParam(':email',$email,\PDO::PARAM_STR);
         $select->setFetchMode(\PDO::FETCH_ASSOC);
         $select->execute();
@@ -51,7 +51,7 @@ class Users extends DB {
      */
     public function addUser($form){
 
-        $form =  Helpers_Main::prepareArr($form);
+        $form =  Main::prepareArr($form);
         $pass = md5($form['u_pass']);
         $table = $this->dbs['w_task'].'.'.$this->tables['w_task']['users'];
         $insert = $this->db->prepare("INSERT INTO {$table} (u_name,surname,email,pass,phone,birth,sex,ava_file_name)
