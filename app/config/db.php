@@ -10,8 +10,8 @@ $dbConfig = [
 
     'mainServer'=>[
         'dsn'=>'mysql:host=ps-st.ru;dbname=w_task',
-        'user'=>'root',
-        'password'=>'970g47ij0g47ij0mysql',
+        'user'=>'',
+        'password'=>'',
         'sql_char'=>'utf8'
     ]
 
