@@ -36,9 +36,7 @@ class Controller_Lk {
             header('Location: /');
         } else {
             \Core\View::forge('lk',$uData);
-
         }
-
     }
 
     /**
