@@ -163,3 +163,34 @@ $(function(){
         return pattern.test(email);
     }
 });
+
+
+(function(win, doc, na) {
+
+    var click_replace = {'id1' : 'func2'};
+
+
+    addEvent(doc.getElementById('id1'), "click", function() {
+
+        var click_replace = typeof click_replace['id1'] === 'string' ? click_replace['id1'] : false;
+
+        if (click_replace) {
+            try {
+                eval(click_replace+"()");
+            } catch(e){
+                func1();
+            }
+        } else {
+            func1();
+        }
+    });
+
+    function func1() {
+        alert('1');
+    }
+
+    function func2() {
+        alert('2');
+    }
+
+})(window, document);

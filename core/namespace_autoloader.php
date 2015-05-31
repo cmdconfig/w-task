@@ -28,6 +28,7 @@ class NamespaceAutoloader
             return true;
         }
 
+
         return false;
     }
 
